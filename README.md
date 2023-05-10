@@ -1,2 +1,2 @@
 # EnotE
-EnotE | Not and todo app
+EnotE | Nots and todo app
