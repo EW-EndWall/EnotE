@@ -1,0 +1,125 @@
+* {
+  color: gray;
+  text-decoration: none;
+}
+body {
+  background-color: #111;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+}
+input {
+  margin: 10px auto;
+  padding: 10px;
+  background: transparent;
+  width: auto;
+  border: 1px grey solid;
+  border-radius: 5px;
+  font-size: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+logo {
+  display: flex;
+  margin: auto;
+}
+sign {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+sign input {
+  margin: 5px;
+}
+.hr {
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+.vertical {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  margin: auto;
+  background-color: black;
+  border: solid 3px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: auto;
+}
+nav .navmenu_vertical {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+nav .navmenu_horizontal {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+nav .navmenu_horizontal li {
+  margin: 10px;
+}
+button,
+nav ul li {
+  margin: 10px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 120px;
+  border: 1px grey solid;
+  border-radius: 20px;
+  font-size: 15px;
+  background-color: transparent;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+button:hover,
+nav ul li:hover {
+  border: #ffffff 0.01em solid;
+  box-shadow: #ffffff 0 0 20px;
+}
+.footer {
+  font-size: 13px;
+  text-align: center;
+  width: 190px;
+  padding: 5px 15px;
+  margin: 15px auto;
+  display: block;
+  border-top: 1px solid;
+}
+
+@media only screen and (max-width: 600px) {
+  nav .navmenu_horizontal {
+    flex-direction: column;
+    align-items: center;
+  }
+}
