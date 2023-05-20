@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnotE</title>
+    <meta
+      property="og:image"
+      content="./../assets/img/android-chrome-512x512.png"
+    />
+    <meta property="og:image:width" content="110" />
+    <meta property="og:image:height" content="110" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="./../assets/img/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" href="./../assets/img/favicon-32x32.png" sizes="32x32" />
+    <link
+      rel="icon"
+      href="./../assets/img/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link rel="apple-touch-icon" href="./../assets/img/apple-touch-icon.png" />
+    <meta
+      name="msapplication-TileImage"
+      content="./../assets/img/android-chrome-512x512.png"
+    />
+  </head>
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./datepicker.material.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <label id="senk" class="senk"></label>
+    <div class="main-container">
+      <div class="main-wrapper">
+        <logo
+          ><img
+            src="./../assets/img/android-chrome-192x192.png"
+            style="width: 50px"
+            alt="logo"
+        /></logo>
+        <p id="nowDate" class="now-date"></p>
+        <nav>
+          <ul class="navmenu_horizontal">
+            <a href="./../"><li>Menu</li></a>
+            <a onclick="senkData()"><li>Senkronize Et</li></a>
+          </ul>
+        </nav>
+
+        <div class="control-wrapper">
+          <div class="box">
+            <label for="mainSelect">Oncelik : </label>
+            <div class="priorityWrap">
+              <select class="priorSelect" id="mainSelect">
+                <option value="no">Yok</option>
+                <option value="low">Dusuk</option>
+                <option value="middle">Normal</option>
+                <option value="high">Acil</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dateWrap">
+            <div class="box">
+              <label for="anyDate">Tarih : </label>
+              <input type="text" class="date" id="datepicker" />
+            </div>
+          </div>
+
+          <div class="box">
+            <label for="anyDate">TODO : </label>
+            <div class="addTodoWrap">
+              <input
+                id="addTodo"
+                type="text"
+                class="new-task"
+                placeholder="Ekle.."
+              />
+
+              <button id="addTodoBtn" class="add-task">
+                <i class="add-task__icon fas fa-plus circle-icon"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <ul id="todos" class="main-list"></ul>
+      </div>
+    </div>
+    <script src="./../assets/js/jquery-3.6.3.min.js"></script>
+    <script src="./../assets/js/access.js"></script>
+    <script src="./datepicker.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
