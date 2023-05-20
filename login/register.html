@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnotE - Kaydol</title>
+    <meta
+      property="og:image"
+      content="./../../assets/img/android-chrome-512x512.png"
+    />
+    <meta property="og:image:width" content="110" />
+    <meta property="og:image:height" content="110" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="icon"
+      href="./../../assets/img/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      href="./../../assets/img/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="./../../assets/img/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="./../../assets/img/apple-touch-icon.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="./../../assets/img/android-chrome-512x512.png"
+    />
+  </head>
+  <link rel="stylesheet" href="./../../assets/css/style.css" />
+  <script src="./../../assets/js/jquery-3.6.3.min.js"></script>
+  <script src="./../../assets/js/access.js"></script>
+
+  <body>
+    <form method="post" action="./../../api/">
+      <input type="hidden" id="formid" name="formid" value="register" />
+      <div class="vertical">
+        <logo>
+          <img
+            src="./../../assets/img/android-chrome-192x192.png"
+            style="width: 100px"
+            alt="logo"
+          />
+        </logo>
+        <h1 class="hr">Kaydol</h1>
+        <label id="message"> </label>
+
+        <input
+          type="text"
+          placeholder="Kullanıcı adı"
+          id="txtKadi"
+          name="txtKadi"
+          value=""
+          required
+        />
+        <input
+          type="email"
+          placeholder="E Mail"
+          id="txtMail"
+          name="txtMail"
+          value=""
+          required
+        />
+        <input
+          type="password"
+          placeholder="Şifre"
+          pattern=".{6,}"
+          title="En az 6 karakter"
+          id="txtParola"
+          name="txtParola"
+          autocomplete="off"
+          required
+        />
+        <input
+          class="password"
+          type="password"
+          inputmode="numeric"
+          placeholder="6 Rakamlı Güvenlik Kodu"
+          pattern="[0-9]{6,6}"
+          maxlength="6"
+          title="Kod 6 Rakamdam Oluşmalıdır"
+          id="txtKod"
+          name="txtKod"
+          autocomplete="off"
+          required
+        />
+
+        <nav>
+          <ul class="navmenu_horizontal">
+            <li>
+              <button>KAYDOL</button>
+            </li>
+            <a href="./../"><li>GİRİŞ YAP</li></a>
+          </ul>
+        </nav>
+        <div class="footer">
+          EnotE from ©endwall.pw
+          <br />
+          v <span id="eversion"></span>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
