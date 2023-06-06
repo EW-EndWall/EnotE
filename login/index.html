@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EnotE - Giriş Yap</title>
+    <title>EnotE - Login</title>
     <meta
       property="og:image"
       content="./../assets/img/android-chrome-512x512.png"
@@ -40,12 +40,12 @@
             alt="logo"
           />
         </logo>
-        <h1 class="hr">Giriş</h1>
+        <h1 class="hr" id="title">Login</h1>
         <label id="message"> </label>
 
         <input
           type="text"
-          placeholder="Kullanıcı adı"
+          placeholder="Nick"
           id="txtKadi"
           name="txtKadi"
           value=""
@@ -53,7 +53,7 @@
         />
         <input
           type="password"
-          placeholder="Şifre"
+          placeholder="*****"
           pattern=".{6,}"
           title="en az 6 karakter"
           id="txtParola"
@@ -64,17 +64,19 @@
 
         <sign>
           <input type="checkbox" id="ckbHatirla" name="ckbHatirla" />
-          <label for="remember">Beni hatırla</label>
+          <label for="remember" id="rememberBtn">Remember me</label>
         </sign>
         <nav>
           <ul class="navmenu_horizontal">
             <li>
-              <button>GİRİŞ YAP</button>
+              <button id="loginBtn">Login</button>
             </li>
-            <a href="./register/"><li>KAYDOL</li></a>
+            <a href="./register/"><li id="registerBtn">Register</li></a>
           </ul>
         </nav>
-        <a href="./forgetpassword/">~ Şifremi Unuttum ~</a>
+        <a href="./forgetpassword/" id="forgetpasswordBtn"
+          >~ Forgot Password ~</a
+        >
         <div class="footer">
           EnotE from ©endwall.pw
           <br />
@@ -82,5 +84,6 @@
         </div>
       </div>
     </form>
+    <script src="./lang-login.js"></script>
   </body>
 </html>
