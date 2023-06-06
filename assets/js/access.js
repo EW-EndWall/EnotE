@@ -1,9 +1,11 @@
 window.addEventListener(
   "load",
   function () {
-    if (window.location.protocol != "https:") {
-      window.location.href = "https:" + "//" + window.location.hostname;
-    }
+    // * get language
+    const lang = navigator.language.split("-")[0];
+    // if (window.location.protocol != "https:") {
+    //   window.location.href = "https:" + "//" + window.location.hostname;
+    // }
     const username = ("; " + document.cookie)
       .split(`; username=`)
       .pop()
@@ -53,57 +55,146 @@ window.addEventListener(
       if (txtMail) {
         document.getElementById("txtMail").value = txtMail;
       }
-
       if (location[0] == "login" && location[1] == "register") {
         switch (data) {
           case "0":
-            document.getElementById("message").innerText =
-              "Boş Yerleri Doldurunuz.";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Boş Yerleri Doldurunuz.";
+                break;
+
+              default:
+                document.getElementById("message").innerText =
+                  "Fill in the Blanks.";
+                break;
+            }
             break;
 
           case "1":
-            document.getElementById("message").innerText =
-              "Zaten Böyle Bir Kullanıcı Adı veya Eposta kayıtlı.";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Zaten Böyle Bir Kullanıcı Adı veya Eposta kayıtlı.";
+                break;
+
+              default:
+                document.getElementById("message").innerText =
+                  "Such Username or Email is already registered.";
+                break;
+            }
             break;
 
           default:
-            document.getElementById("message").innerText = "Bilinmeyen Hata";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Bilinmeyen Hata";
+                break;
+
+              default:
+                document.getElementById("message").innerText = "Unknown Error";
+                break;
+            }
             break;
         }
       } else if (location[0] == "login" && location[1] == "forgetpassword") {
         switch (data) {
           case "0":
-            document.getElementById("message").innerText =
-              "Boş Yerleri Doldurunuz.";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Boş Yerleri Doldurunuz.";
+                break;
+
+              default:
+                document.getElementById("message").innerText =
+                  "Fill in the Blanks.";
+                break;
+            }
             break;
 
           case "1":
-            document.getElementById("message").innerText =
-              "Hatalı Bilgler veya Aynı Şifre!";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Hatalı Bilgiler veya Aynı Şifre!";
+                break;
+
+              default:
+                document.getElementById("message").innerText =
+                  "Incorrect Information or Same Password!";
+                break;
+            }
             break;
 
           default:
-            document.getElementById("message").innerText = "Bilinmeyen Hata";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Bilinmeyen Hata";
+                break;
+
+              default:
+                document.getElementById("message").innerText = "Unknown Error";
+                break;
+            }
             break;
         }
       } else if (location[0] == "login") {
         switch (data) {
           case "0":
-            document.getElementById("message").innerText =
-              "Boş Yerleri Doldurunuz.";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Boş Yerleri Doldurunuz.";
+                break;
+
+              default:
+                document.getElementById("message").innerText =
+                  "Fill in the Blanks.";
+                break;
+            }
             break;
 
           case "1":
-            document.getElementById("message").innerText = "Hatalı Şifre!";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText = "Hatalı Şifre!";
+                break;
+
+              default:
+                document.getElementById("message").innerText =
+                  "Incorrect Password!";
+                break;
+            }
             break;
 
           case "2":
-            document.getElementById("message").innerText =
-              "Böle Bir Kullanıcı Bulunamadı.";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Böyle Bir Kullanıcı Bulunamadı.";
+                break;
+
+              default:
+                document.getElementById("message").innerText =
+                  "No Such User Found.";
+                break;
+            }
             break;
 
           default:
-            document.getElementById("message").innerText = "Bilinmeyen Hata";
+            switch (lang) {
+              case "tr":
+                document.getElementById("message").innerText =
+                  "Bilinmeyen Hata";
+                break;
+
+              default:
+                document.getElementById("message").innerText = "Unknown Error";
+                break;
+            }
             break;
         }
       }
