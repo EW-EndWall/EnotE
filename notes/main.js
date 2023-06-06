@@ -623,33 +623,58 @@ addButton.addEventListener("click", () => {
 
 const getDate = () => {
   var months = new Array(13);
-  months[1] = "Ocak";
-  months[2] = "Şubat";
-  months[3] = "Mart";
-  months[4] = "Nisan";
-  months[5] = "Mayıs";
-  months[6] = "Haziran";
-  months[7] = "Temmuz";
-  months[8] = "Ağustos";
-  months[9] = "Eylül";
-  months[10] = "Ekim";
-  months[11] = "Kasım";
-  months[12] = "Aralık";
 
   var time = new Date();
-  var thismonth = months[time.getMonth() + 1];
   var date = time.getDate();
   var thisyear = time.getFullYear();
   var day = time.getDay() + 1;
 
   if (thisyear < 2000) thisyear = thisyear + 1900;
-  if (day == 1) DayofWeek = "Pazar";
-  if (day == 2) DayofWeek = "Pazartesi";
-  if (day == 3) DayofWeek = "Salı";
-  if (day == 4) DayofWeek = "Çarşamba";
-  if (day == 5) DayofWeek = "Perşembe";
-  if (day == 6) DayofWeek = "Cuma";
-  if (day == 7) DayofWeek = "Cumartesi";
+
+  // * get language
+  const lang = navigator.language.split("-")[0];
+  if (lang == "tr") {
+    months[1] = "Ocak";
+    months[2] = "Şubat";
+    months[3] = "Mart";
+    months[4] = "Nisan";
+    months[5] = "Mayıs";
+    months[6] = "Haziran";
+    months[7] = "Temmuz";
+    months[8] = "Ağustos";
+    months[9] = "Eylül";
+    months[10] = "Ekim";
+    months[11] = "Kasım";
+    months[12] = "Aralık";
+    if (day == 1) DayofWeek = "Pazar";
+    if (day == 2) DayofWeek = "Pazartesi";
+    if (day == 3) DayofWeek = "Salı";
+    if (day == 4) DayofWeek = "Çarşamba";
+    if (day == 5) DayofWeek = "Perşembe";
+    if (day == 6) DayofWeek = "Cuma";
+    if (day == 7) DayofWeek = "Cumartesi";
+  } else {
+    months[1] = "January";
+    months[2] = "February";
+    months[3] = "March";
+    months[4] = "April";
+    months[5] = "May";
+    months[6] = "June";
+    months[7] = "July";
+    months[8] = "August";
+    months[9] = "September";
+    months[10] = "October";
+    months[11] = "November";
+    months[12] = "December";
+    if (day == 1) DayofWeek = "Sunday";
+    if (day == 2) DayofWeek = "Monday";
+    if (day == 3) DayofWeek = "Tuesday";
+    if (day == 4) DayofWeek = "Wednesday";
+    if (day == 5) DayofWeek = "Thursday";
+    if (day == 6) DayofWeek = "Friday";
+    if (day == 7) DayofWeek = "Saturday";
+  }
+  var thismonth = months[time.getMonth() + 1];
 
   nowDate.innerHTML =
     "<span>" + date + " " + thismonth + "</span>" + "<br>" + DayofWeek;
@@ -699,17 +724,29 @@ function senkData() {
         );
         return tmp;
       })();
+      // * get language
+      const lang = navigator.language.split("-")[0];
       if (status == "fail") {
         if ($("#senk span").length == 0) {
-          $("#senk").append('<span class="error">Senkronizasyon Hatalı</span>');
+          if (lang == "tr") {
+            $("#senk").append(
+              '<span class="error">Senkronizasyon Hatalı</span>'
+            );
+          } else {
+            $("#senk").append('<span class="error">Sync Incorrect</span>');
+          }
         }
         getNotes();
         break;
       } else {
         if ($("#senk span").length == 0) {
-          $("#senk").append(
-            '<span class="succes">Senkronizasyon Başarılı</span>'
-          );
+          if (lang == "tr") {
+            $("#senk").append(
+              '<span class="succes">Senkronizasyon Başarılı</span>'
+            );
+          } else {
+            $("#senk").append('<span class="error">Sync Successful</span>');
+          }
         }
         const localok = localup.filter(function (obj) {
           return obj.create != e.create;

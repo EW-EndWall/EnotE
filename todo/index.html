@@ -49,39 +49,39 @@
         <p id="nowDate" class="now-date"></p>
         <nav>
           <ul class="navmenu_horizontal">
-            <a href="./../"><li>Menu</li></a>
-            <a onclick="senkData()"><li>Senkronize Et</li></a>
+            <a href="./../"><li id="menuBtn">Menu</li></a>
+            <a onclick="senkData()"><li id="secBtn">Sync</li></a>
           </ul>
         </nav>
 
         <div class="control-wrapper">
           <div class="box">
-            <label for="mainSelect">Oncelik : </label>
+            <label for="mainSelect" id="priority">Priority : </label>
             <div class="priorityWrap">
               <select class="priorSelect" id="mainSelect">
-                <option value="no">Yok</option>
-                <option value="low">Dusuk</option>
-                <option value="middle">Normal</option>
-                <option value="high">Acil</option>
+                <option value="no" id="null">None</option>
+                <option value="low" id="low">Low</option>
+                <option value="middle" id="normal">Normal</option>
+                <option value="high" id="high">High</option>
               </select>
             </div>
           </div>
 
           <div class="dateWrap">
             <div class="box">
-              <label for="anyDate">Tarih : </label>
+              <label for="anyDate" id="date">Date : </label>
               <input type="text" class="date" id="datepicker" />
             </div>
           </div>
 
           <div class="box">
-            <label for="anyDate">TODO : </label>
+            <label for="anyDate" id="title">TODO : </label>
             <div class="addTodoWrap">
               <input
                 id="addTodo"
                 type="text"
                 class="new-task"
-                placeholder="Ekle.."
+                placeholder="Add.."
               />
 
               <button id="addTodoBtn" class="add-task">
@@ -98,5 +98,6 @@
     <script src="./../assets/js/access.js"></script>
     <script src="./datepicker.js"></script>
     <script src="./main.js"></script>
+    <script src="./lang.js"></script>
   </body>
 </html>

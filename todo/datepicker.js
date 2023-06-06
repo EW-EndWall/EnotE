@@ -216,24 +216,24 @@
     onInit: !1,
     onChange: !1,
     onRender: !1,
-    i18n: {
-      months: [
-        "Ocak",
-        "Şubat",
-        "Mart",
-        "Nisan",
-        "Mayıs",
-        "Haziran",
-        "Temmmuz",
-        "Auğstos",
-        "Eylül",
-        "Ekim",
-        "Kasım",
-        "Aralık",
-      ],
-      weekdays: ["Pa", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
-      time: ["Time", "Start", "End"],
-    },
+    // i18n: {
+    //   months: [
+    //     "Ocak",
+    //     "Şubat",
+    //     "Mart",
+    //     "Nisan",
+    //     "Mayıs",
+    //     "Haziran",
+    //     "Temmmuz",
+    //     "Auğstos",
+    //     "Eylül",
+    //     "Ekim",
+    //     "Kasım",
+    //     "Aralık",
+    //   ],
+    //   weekdays: ["Pa", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
+    //   time: ["Time", "Start", "End"],
+    // },
     classNames: {
       node: "datepicker",
       wrapper: "datepicker__wrapper",
@@ -295,6 +295,46 @@
       ].join(""),
     },
   };
+  const lang = navigator.language.split("-")[0];
+  if (lang === "tr") {
+    w["i18n"] = {
+      months: [
+        "Ocak",
+        "Şubat",
+        "Mart",
+        "Nisan",
+        "Mayıs",
+        "Haziran",
+        "Temmmuz",
+        "Auğstos",
+        "Eylül",
+        "Ekim",
+        "Kasım",
+        "Aralık",
+      ],
+      weekdays: ["Pa", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
+      time: ["Time", "Start", "End"],
+    };
+  } else {
+    w["i18n"] = {
+      months: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ],
+      weekdays: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+      time: ["Time", "Start", "End"],
+    };
+  }
   var b = (function () {
     function e(n, i) {
       var r = this;
