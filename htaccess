@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# **** HTTPS ****
+#RewriteCond %{HTTPS} !=off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+
+# **** PAGE ****
+#RewriteRule ^(.*?)/?$ $1.php [QSA,NC,L]
+RewriteRule ^(.*?)/?$ $1.html [QSA,NC,L]
+
+
+
+# **** / ADD ****
+RewriteCond %{REQUEST_URI} !(/$|\.) 
+RewriteRule (.*) %{REQUEST_URI}/ [R=301,L]
+
+#ErrorDocument 404 http://%{HTTP_HOST}/
+
